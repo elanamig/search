@@ -21,32 +21,13 @@ describe('bubbleSort', function() {
   });
 
   it('sort multiple elements in asending order', function() {
-    expect(sorted).equals([5, 15, 17, 25]);
+    expect(sorted).toEqual([5, 15, 17, 25]);
   });
 
   it('modify the original array in-place', function() {
-    expect(unsorted).equals(sorted);
+    expect(unsorted).toEqual(sorted);
   });
 })
 
-function sort (arr, maxIndex) {
 
-  if (maxIndex ===1 || arr.length < 1 ) {
-    return arr;
-  }
-  console.log(maxIndex)
-  if (!maxIndex){
-    console.log(arr)
-    maxIndex = arr.length;
-    console.log(maxIndex)
-  }
-  for (var i=0; i< maxIndex-1; i++){
-    if (arr[i] > arr[i+1]){
-      var temp = arr[i];
-      arr[i] = arr[i+1];
-      arr[i+1] = temp;
-    }
-  }
-  sort(arr, maxIndex--);
-}
 
